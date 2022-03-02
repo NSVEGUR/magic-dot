@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { Button } from 'ui/src/Button'
 
 const Home: NextPage = () => {
   return (
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
             pages/index.tsx
           </code>
         </p>
-
+        <Button />
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <a
             href="https://nextjs.org/docs"

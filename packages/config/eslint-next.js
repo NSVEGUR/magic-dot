@@ -3,17 +3,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: [
-    'next/core-web-vitals',
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
-    'prettier',
-  ],
+  extends: ['next/core-web-vitals', 'eslint:recommended', 'prettier'],
   plugins: ['@typescript-eslint', 'import'],
   settings: {
     next: {

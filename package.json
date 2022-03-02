@@ -9,6 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "test": "turbo run test",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "tsc --pretty --noEmit",
@@ -17,13 +18,25 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "husky": "^7.0.0",
+    "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
-    "turbo": "latest",
-    "husky": "^7.0.0"
+    "turbo": "latest"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "lint-staged": {
+    "apps/**/*.{js, ts, tsx, jsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js, ts, tsx, jsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
 }
