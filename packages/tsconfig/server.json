@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "React Library",
+  "display": "Server",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["ES2015"],
-    "module": "ESNext",
+    "module": "commonjs",
     "target": "ES6",
-    "jsx": "react-jsx"
+    "noEmit": false,
+    "sourceMap": true
   }
 }
