@@ -3,7 +3,7 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
-npm run test && npx lint-staged ||
+npx lint-staged ||
 (
     echo '🥵 What the ❌heck are you trying to do!? 💩😂 go check the linting';
     false;
