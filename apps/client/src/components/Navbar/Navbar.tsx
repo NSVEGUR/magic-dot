@@ -40,7 +40,12 @@ const Navbar = () => {
             </a>
           </div>
           <div className="secondary-nav hidden items-center space-x-2 md:flex">
-            <button className="text-gray-400 transition duration-300 hover:text-white">
+            <button
+              className="text-gray-400 transition duration-300 hover:text-white"
+              onClick={() => {
+                document.querySelector('.search-bar').classList.toggle('hidden')
+              }}
+            >
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -114,13 +119,13 @@ const Navbar = () => {
               </svg>
             </a>
           </div>
-          <div
-            className="mobile-menu-button flex items-center space-x-2 md:hidden"
-            onClick={() => {
-              document.querySelector('.mobile-menu').classList.toggle('hidden')
-            }}
-          >
-            <button className="text-gray-400 transition duration-300 hover:text-white">
+          <div className="mobile-menu-button flex items-center space-x-2 md:hidden">
+            <button
+              className="text-gray-400 transition duration-300 hover:text-white"
+              onClick={() => {
+                document.querySelector('.search-bar').classList.toggle('hidden')
+              }}
+            >
               <svg
                 className="h-7 w-7"
                 fill="none"
@@ -136,7 +141,13 @@ const Navbar = () => {
                 ></path>
               </svg>
             </button>
-            <button>
+            <button
+              onClick={() => {
+                document
+                  .querySelector('.mobile-menu')
+                  .classList.toggle('hidden')
+              }}
+            >
               <svg
                 className="h-7 w-7"
                 fill="none"
@@ -153,6 +164,60 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
+        </div>
+        <div className="search-bar relative hidden w-full px-2 pb-2 text-gray-400 focus-within:text-gray-400">
+          <span className="absolute top-1 left-2 flex items-center pl-2">
+            <button
+              type="submit"
+              className="focus:shadow-outline p-1 focus:outline-none"
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+            </button>
+          </span>
+          <input
+            type="text"
+            name="q"
+            className="w-full rounded-md bg-black py-2 pl-10 text-sm text-white focus:bg-white focus:text-gray-900 focus:outline-none"
+            placeholder="Search by products..."
+            autoComplete="off"
+          />
+          <span className="absolute top-1 right-3 flex items-center pl-2">
+            <button
+              type="submit"
+              className="focus:shadow-outline p-1 focus:outline-none"
+              onClick={() => {
+                document.querySelector('.search-bar').classList.add('hidden')
+              }}
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </span>
         </div>
         <div className="mobile-menu hidden space-y-2 px-4 pb-4 transition duration-300">
           <a href="" className="block text-white">
