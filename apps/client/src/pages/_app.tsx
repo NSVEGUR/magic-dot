@@ -5,6 +5,8 @@ import Head from 'next/head'
 import Navbar from 'src/components/Navbar/Navbar'
 import Footer from 'src/components/Footer/Footer'
 import Help from 'src/components/Help/Help'
+import Login from 'src/components/Login/Login'
+import Signup from 'src/components/Signup/Signup'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -17,6 +19,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Navbar></Navbar>
       </header>
       <Component {...pageProps}></Component>
+      <Signup></Signup>
+      <Login></Login>
       <footer>
         <Help></Help>
         <Footer></Footer>
