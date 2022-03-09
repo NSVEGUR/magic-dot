@@ -69,10 +69,10 @@ const Help = () => {
         <input
           type="email"
           name="q"
-          className="mb-5 rounded-md bg-gray-400 py-2 pl-3 text-sm text-gray-600 placeholder-gray-600 focus:bg-white focus:text-gray-900 focus:outline-none"
+          className="mb-5 rounded-md bg-gray-800 py-2 pl-3 text-sm text-gray-600 placeholder-gray-400 focus:bg-white focus:text-gray-900 focus:outline-none"
           placeholder="Enter your email"
         />
-        <button className="w-fit self-center rounded bg-white px-2 py-1 text-gray-800 hover:bg-gray-100">
+        <button className="w-fit self-center rounded bg-white px-2 py-1 text-gray-800 hover:bg-gray-800 hover:text-gray-400">
           Subscribe
         </button>
       </div>

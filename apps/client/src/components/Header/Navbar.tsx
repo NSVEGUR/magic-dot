@@ -1,12 +1,32 @@
 import React from 'react'
 import Image from 'next/image'
 
-// import the icons you need
+var lastScrollTop = 0
 
 const Navbar = () => {
+  React.useEffect(() => {
+    window.addEventListener('scroll', () => {
+      var st = window.screenY || document.documentElement.scrollTop
+      if (st > lastScrollTop && window.scrollY >= 100) {
+        document.querySelector('.navbar-top').classList.add('-translate-y-full')
+      } else {
+        document
+          .querySelector('.navbar-top')
+          .classList.remove('-translate-y-full')
+      }
+      lastScrollTop = st <= 0 ? 0 : st
+    })
+    window.addEventListener('mousemove', e => {
+      if (e.y <= 80) {
+        document
+          .querySelector('.navbar-top')
+          .classList.remove('-translate-y-full')
+      }
+    })
+  }, [])
   return (
     <>
-      <nav className="navbar-top fixed top-0 w-full overflow-x-hidden bg-black text-white">
+      <nav className="navbar-top fixed top-0 z-[999] w-full overflow-x-hidden bg-black text-white transition duration-300">
         <div className="flex justify-between px-2 py-2 md:px-8">
           <div className="logo">
             <a href="#" className="flex items-center">
@@ -41,13 +61,13 @@ const Navbar = () => {
           </div>
           <div className="secondary-nav hidden items-center space-x-2 md:flex">
             <button
-              className="text-gray-400 transition duration-300 hover:text-white"
+              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
               onClick={() => {
                 document.querySelector('.search-bar').classList.toggle('hidden')
               }}
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -63,10 +83,10 @@ const Navbar = () => {
             </button>
             <a
               href="#"
-              className="text-gray-400 transition duration-300 hover:text-white"
+              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -82,10 +102,10 @@ const Navbar = () => {
             </a>
             <a
               href="#"
-              className="text-gray-400 transition duration-300 hover:text-white"
+              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -100,13 +120,13 @@ const Navbar = () => {
               </svg>
             </a>
             <button
-              className="text-gray-400 transition duration-300 hover:text-white"
+              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
               onClick={() => {
                 document.querySelector('.login-form').classList.remove('hidden')
               }}
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -221,7 +241,7 @@ const Navbar = () => {
             </button>
           </span>
         </div>
-        <div className="mobile-menu hidden space-y-2 px-4 pb-4 transition duration-300">
+        <div className="mobile-menu hidden space-y-2 px-4 pb-4 transition duration-300 md:hidden">
           <a href="" className="block text-white">
             All
           </a>
@@ -239,9 +259,9 @@ const Navbar = () => {
           </a>
         </div>
       </nav>
-      <nav className="navbar-bottom fixed bottom-0 w-full overflow-x-hidden bg-black text-white">
+      <nav className="navbar-bottom fixed -bottom-1 w-full overflow-x-hidden bg-black text-white">
         <div className="flex justify-evenly px-2 py-4 md:hidden">
-          <a className="relative text-white transition duration-300 before:absolute before:-bottom-4 before:block before:h-1 before:w-full before:rounded before:bg-white">
+          <a className="relative text-white transition duration-300 before:absolute before:left-1/2 before:-bottom-2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:rounded-full before:bg-white">
             <svg
               className="h-7 w-7"
               fill="none"

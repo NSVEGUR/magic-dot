@@ -8,11 +8,11 @@ const handleSubmit = (e: React.SyntheticEvent) => {
 
 const Login = () => {
   return (
-    <div className="login-form hidden">
+    <div className="signup-form hidden">
       <section
-        className="fixed inset-0 flex h-full w-full items-center justify-center bg-black bg-opacity-10 shadow-lg backdrop-blur-sm"
+        className="fixed inset-0 z-[999] flex h-full w-full items-center justify-center bg-black bg-opacity-10 shadow-lg backdrop-blur-sm"
         onClick={() => {
-          document.querySelector('.login-form').classList.add('hidden')
+          document.querySelector('.signup-form').classList.add('hidden')
         }}
       >
         <form
@@ -25,7 +25,7 @@ const Login = () => {
           <button
             className="absolute top-4 right-4 text-white"
             onClick={() => {
-              document.querySelector('.login-form').classList.add('hidden')
+              document.querySelector('.signup-form').classList.add('hidden')
             }}
           >
             <svg
@@ -49,6 +49,18 @@ const Login = () => {
             height={75}
           />
           <input
+            type="text"
+            name="firstname"
+            className="w-full bg-black py-2 pl-3 text-gray-300 placeholder-gray-600 outline outline-gray-700 ring-gray-700 focus:ring-1"
+            placeholder="First Name"
+          />
+          <input
+            type="text"
+            name="lastname"
+            className="w-full bg-black py-2 pl-3 text-gray-300 placeholder-gray-600 outline outline-gray-700 ring-gray-700 focus:ring-1"
+            placeholder="Last Name"
+          />
+          <input
             type="email"
             name="email"
             className="w-full bg-black py-2 pl-3 text-gray-300 placeholder-gray-600 outline outline-gray-700 ring-gray-700 focus:ring-1"
@@ -65,7 +77,7 @@ const Login = () => {
             type="submit"
             name="submit"
             className="w-full bg-white py-2 text-black"
-            value="Login"
+            value="Signup"
           />
           <button className="row flex w-full items-center justify-center gap-3 bg-gray-800 py-2 px-4 text-gray-300">
             <span>
@@ -83,18 +95,16 @@ const Login = () => {
             Continue with Google
           </button>
           <h3 className="text-gray-400">
-            Don't have an account!?{' '}
+            Do you have an account!?{' '}
             <button
               className="text-white"
               onClick={() => {
-                document.querySelector('.login-form').classList.add('hidden')
-                document
-                  .querySelector('.signup-form')
-                  .classList.remove('hidden')
+                document.querySelector('.signup-form').classList.add('hidden')
+                document.querySelector('.login-form').classList.remove('hidden')
               }}
             >
               {' '}
-              Signup
+              Login
             </button>
           </h3>
         </form>
