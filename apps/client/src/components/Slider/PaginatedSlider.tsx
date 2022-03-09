@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
-const Slider = () => {
+const PaginatedSlider = () => {
   React.useEffect(() => {
     const slides: NodeListOf<HTMLElement> = document.querySelectorAll('.slide')
     const sliderBtnLeft: HTMLElement = document.getElementById('prev')
@@ -125,21 +125,21 @@ const Slider = () => {
       id="slider"
       className="slider relative my-0 mx-auto h-80 max-w-[100rem] overflow-hidden bg-black text-white md:h-96"
     >
-      <div className="slide  absolute top-0 flex  h-full w-full items-center justify-center bg-black transition duration-1000">
+      <div className="slide  absolute inset-0 flex  h-full w-full items-center justify-center bg-black transition duration-1000">
         <img
           src="/assets/slide-1.png"
           alt="slide-1"
           className="h-full w-full object-contain"
         ></img>
       </div>
-      <div className="slide  absolute top-0 flex  h-full w-full items-center justify-center bg-black transition duration-1000">
+      <div className="slide  absolute inset-0 flex  h-full w-full items-center justify-center bg-black transition duration-1000">
         <img
           src="/assets/slide-2.png"
           alt="slide-2"
           className="h-full w-full object-contain"
         ></img>
       </div>
-      <div className="slide absolute top-0  flex h-full w-full items-center  justify-center bg-black transition duration-1000">
+      <div className="slide absolute inset-0  flex h-full w-full items-center  justify-center bg-black transition duration-1000">
         <img
           src="/assets/slide-3.png"
           alt="slide-3"
@@ -189,4 +189,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default PaginatedSlider

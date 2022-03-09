@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
           <div className="primary-nav hidden items-center space-x-4 md:flex">
             <a href="#" className="text-white">
-              All
+              Home
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
               Featured
@@ -243,7 +243,7 @@ const Navbar = () => {
         </div>
         <div className="mobile-menu hidden space-y-2 px-4 pb-4 transition duration-300 md:hidden">
           <a href="" className="block text-white">
-            All
+            Home
           </a>
           <a href="" className="block text-gray-400 hover:text-white">
             Featured
@@ -259,7 +259,7 @@ const Navbar = () => {
           </a>
         </div>
       </nav>
-      <nav className="navbar-bottom fixed -bottom-1 w-full overflow-x-hidden bg-black text-white">
+      <nav className="navbar-bottom fixed -bottom-1 z-[999] w-full overflow-x-hidden bg-black text-white">
         <div className="flex justify-evenly px-2 py-4 md:hidden">
           <a className="relative text-white transition duration-300 before:absolute before:left-1/2 before:-bottom-2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:rounded-full before:bg-white">
             <svg
