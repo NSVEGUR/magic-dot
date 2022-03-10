@@ -34,8 +34,11 @@ img {
   transform: scale(1.3);
 }
 
-.infinite-slide-animation {
-  animation: bannermove 20s linear infinite;
+.infinite-slide-straight {
+  animation: bannermove 20s linear infinite alternate;
+}
+.infinite-slide-reverse {
+  animation: bannermove 20s linear infinite alternate-reverse;
 }
 
 @keyframes load {

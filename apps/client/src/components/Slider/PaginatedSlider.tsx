@@ -17,6 +17,8 @@ const PaginatedSlider = () => {
       dots.forEach(dot => {
         dot.classList.remove('dots__dot--active')
       })
+      // eslint-disable-next-line no-console
+      console.log(slide)
       document
         .querySelector(`.dots__dot--div[data-slide="${slide}"]`)
         .classList.add('dots__dot--active')
@@ -57,7 +59,7 @@ const PaginatedSlider = () => {
       if (currentSlide === maxSlide) {
         currentSlide = 0
       } else {
-        currentSlide++
+        currentSlide += 1
       }
       gotoSlide(currentSlide)
     }
@@ -66,7 +68,7 @@ const PaginatedSlider = () => {
       if (currentSlide === 0) {
         currentSlide = maxSlide
       } else {
-        currentSlide--
+        currentSlide -= 1
       }
       gotoSlide(currentSlide)
     }
@@ -110,7 +112,7 @@ const PaginatedSlider = () => {
       })
       dotContainer.addEventListener('click', (e: any) => {
         if (e.target.classList.contains('dots__dot--div')) {
-          const { slide } = e.target.dataset
+          const slide = parseInt(e.target.dataset.slide)
           stopAutoSlider()
           gotoSlide(slide)
           currentSlide = slide

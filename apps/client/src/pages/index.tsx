@@ -133,14 +133,14 @@ const Home: NextPage = () => {
             Every Occassion must be memorable
           </h1>
           <h3 className="font-extralight">
-            Today and Everyday in th what matters is what we wear right!?. So
-            Why late to order in our site?
+            Today and Everyday in the society what matters is what we wear
+            right!?. So Why late to order in our site?
           </h3>
           <a
             href="#"
             className="relative mt-2 flex flex-row items-center gap-2 border-[1px] border-black bg-white p-2 text-base font-light text-black shadow-lg transition duration-300 hover:bg-black hover:text-white"
           >
-            Explore Family Wear
+            Explore Featured
             <span>
               <svg
                 className="h-4 w-4"
@@ -161,7 +161,65 @@ const Home: NextPage = () => {
           </a>
         </div>
       </div>
-      <InfiniteSlider></InfiniteSlider>
+      <InfiniteSlider
+        {...{
+          backgroundColor: 'bg-white',
+          textColor: 'text-white',
+          textBackgroundColor: 'bg-black',
+          direction: 'infinite-slide-straight',
+        }}
+      ></InfiniteSlider>
+      <div className="relative h-[400px] w-full bg-[#f1eef5] md:h-[600px]">
+        <video
+          className="absolute inset-0 h-full w-full overflow-hidden object-contain"
+          autoPlay={true}
+          loop={true}
+          muted={true}
+        >
+          <source src="/assets/clothes.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 z-[1] h-full w-full bg-white opacity-30"></div>
+        <div className="absolute right-2 z-[1] flex h-full w-full flex-col items-end justify-center gap-3 pl-1 text-xl font-bold text-black md:right-16 md:w-1/2 md:pl-16">
+          <h1 className="text-right text-2xl font-bold text-black md:text-5xl">
+            Every Occassion must be memorable
+          </h1>
+          <h3 className="font-extralight">
+            Today and Everyday in the society what matters is what we wear
+            right!?. So Why late to order in our site?
+          </h3>
+          <a
+            href="#"
+            className="relative mt-2 flex flex-row items-center gap-2 border-[1px] border-black bg-black p-2 text-right text-base font-light text-white shadow-lg transition duration-300 hover:bg-white hover:text-black"
+          >
+            <span>
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                ></path>
+              </svg>
+            </span>
+            Explore Featured
+            <span className="absolute top-[4px] left-[4px] z-[-1] h-full w-full border-[1px] border-black bg-black"></span>
+          </a>
+        </div>
+      </div>
+      <InfiniteSlider
+        {...{
+          backgroundColor: 'bg-black',
+          textColor: 'text-black',
+          textBackgroundColor: 'bg-white',
+          direction: 'infinite-slide-reverse',
+        }}
+      ></InfiniteSlider>
     </main>
   )
 }
