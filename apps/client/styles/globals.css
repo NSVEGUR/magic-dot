@@ -22,7 +22,7 @@
     @apply animate-loadline bg-white opacity-100;
   }
   .secondary-nav-link {
-    @apply rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black;
+    @apply cursor-pointer rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black;
   }
   .active-secondary-nav-link {
     @apply bg-white text-black;

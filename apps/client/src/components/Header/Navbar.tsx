@@ -25,9 +25,40 @@ const Navbar = () => {
       }
     })
   }, [])
+
+  const manageNavbar = (e: React.MouseEvent) => {
+    const element = e.target as HTMLElement
+
+    // Secondary navs
+    if (element.closest('span')?.classList.contains('secondary-nav-hrefs')) {
+      document
+        .querySelectorAll('.secondary-nav-hrefs')
+        .forEach(link => link.classList.remove('active-secondary-nav-link'))
+      element.closest('span').classList.add('active-secondary-nav-link')
+    }
+    if (
+      element.closest('button')?.classList.contains('search-icon') ||
+      element.closest('button')?.classList.contains('search-close') ||
+      element.closest('button')?.classList.contains('search-icon-mobile')
+    ) {
+      document.querySelector('.search-bar').classList.toggle('hidden')
+      document
+        .querySelector('.search-icon')
+        .classList.toggle('active-secondary-nav-link')
+    }
+    if (element.closest('button')?.classList.contains('profile-icon')) {
+      document.querySelector('.login-form').classList.remove('hidden')
+      document
+        .querySelector('.profile-icon')
+        .classList.add('active-secondary-nav-link')
+    }
+  }
   return (
     <>
-      <nav className="navbar-top fixed top-0 z-[999] w-full overflow-x-hidden bg-black text-white transition duration-500">
+      <nav
+        className="navbar-top fixed top-0 z-[999] w-full overflow-x-hidden bg-black text-white transition duration-500"
+        onClick={manageNavbar}
+      >
         <div className="flex justify-between px-2 py-2 md:px-8">
           <div className="logo">
             <a href="#" className="flex items-center">
@@ -61,12 +92,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className="secondary-nav hidden items-center space-x-2 md:flex">
-            <button
-              className="secondary-nav-link"
-              onClick={function () {
-                document.querySelector('.search-bar').classList.toggle('hidden')
-              }}
-            >
+            <button className="secondary-nav-link search-icon">
               <svg
                 className="h-5 w-5"
                 fill="none"
@@ -83,7 +109,7 @@ const Navbar = () => {
               </svg>
             </button>
             <Link href="/wishlist" passHref>
-              <span className="secondary-nav-link">
+              <span className="secondary-nav-link secondary-nav-hrefs">
                 <svg
                   className="h-5 w-5"
                   fill="none"
@@ -101,7 +127,7 @@ const Navbar = () => {
               </span>
             </Link>
             <Link href="/shoppingbag" passHref>
-              <span className="secondary-nav-link">
+              <span className="secondary-nav-link secondary-nav-hrefs">
                 <svg
                   className="h-5 w-5"
                   fill="none"
@@ -118,12 +144,7 @@ const Navbar = () => {
                 </svg>
               </span>
             </Link>
-            <button
-              className="secondary-nav-link"
-              onClick={() => {
-                document.querySelector('.login-form').classList.remove('hidden')
-              }}
-            >
+            <button className="secondary-nav-link profile-icon">
               <svg
                 className="h-5 w-5"
                 fill="none"
@@ -141,14 +162,9 @@ const Navbar = () => {
             </button>
           </div>
           <div className="mobile-menu-button flex items-center space-x-2 md:hidden">
-            <button
-              className="text-gray-400 transition duration-300 hover:text-white"
-              onClick={() => {
-                document.querySelector('.search-bar').classList.toggle('hidden')
-              }}
-            >
+            <button className="search-icon-mobile text-gray-400 transition duration-300 hover:text-white">
               <svg
-                className="h-7 w-7"
+                className="h-6 w-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -218,10 +234,7 @@ const Navbar = () => {
           <span className="absolute top-1 right-3 flex items-center pl-2">
             <button
               type="submit"
-              className="focus:shadow-outline p-1 focus:outline-none"
-              onClick={() => {
-                document.querySelector('.search-bar').classList.add('hidden')
-              }}
+              className="focus:shadow-outline search-close p-1 focus:outline-none"
             >
               <svg
                 className="h-5 w-5"

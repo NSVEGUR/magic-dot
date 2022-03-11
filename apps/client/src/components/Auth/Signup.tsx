@@ -13,6 +13,9 @@ const Login = () => {
         className="fixed inset-0 z-[999] flex h-full w-full items-center justify-center bg-black bg-opacity-10 shadow-lg backdrop-blur-sm"
         onClick={() => {
           document.querySelector('.signup-form').classList.add('hidden')
+          document
+            .querySelector('.profile-icon')
+            .classList.remove('active-secondary-nav-link')
         }}
       >
         <form
@@ -26,6 +29,9 @@ const Login = () => {
             className="absolute top-4 right-4 text-white"
             onClick={() => {
               document.querySelector('.signup-form').classList.add('hidden')
+              document
+                .querySelector('.profile-icon')
+                .classList.remove('active-secondary-nav-link')
             }}
           >
             <svg
