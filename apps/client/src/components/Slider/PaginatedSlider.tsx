@@ -19,7 +19,7 @@ const PaginatedSlider = () => {
       })
       document
         .querySelector(`.dots__dot--div[data-slide="${slide}"]`)
-        .classList.add('dots__dot--active')
+        ?.classList.add('dots__dot--active')
     }
     const createDots = () => {
       slides.forEach((_, i) => {
@@ -72,13 +72,13 @@ const PaginatedSlider = () => {
     }
 
     const startAutoSlider = () => {
-      // if (!autoSlider) {
-      //   autoSlider = setInterval(nextSlide, 3000)
-      // }
+      if (!autoSlider) {
+        autoSlider = window.setInterval(nextSlide, 3000)
+      }
     }
 
     const stopAutoSlider = () => {
-      clearInterval(autoSlider)
+      window.clearInterval(autoSlider)
       autoSlider = null
     }
 

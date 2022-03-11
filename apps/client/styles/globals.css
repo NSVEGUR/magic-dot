@@ -21,11 +21,23 @@
   .dots__dot--active {
     @apply animate-loadline bg-white opacity-100;
   }
+  .nav-link {
+    @apply text-gray-400 hover:text-white;
+  }
+  .nav-link.active-link {
+    @apply text-white;
+  }
   .secondary-nav-link {
     @apply cursor-pointer rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black;
   }
-  .active-secondary-nav-link {
+  .secondary-nav-link.active-link {
     @apply bg-white text-black;
+  }
+  .mobile-secondary-nav-link {
+    @apply relative cursor-pointer text-gray-400 transition duration-300 hover:text-white;
+  }
+  .mobile-secondary-nav-link.active-link {
+    @apply text-white before:absolute before:left-1/2 before:-bottom-2 before:block before:h-1 before:w-1 before:-translate-x-1/2 before:rounded-full before:bg-white;
   }
   .overlay:hover img {
     @apply scale-125;
