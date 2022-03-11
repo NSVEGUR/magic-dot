@@ -6,12 +6,12 @@ import Footer from 'src/components/Footer/Footer'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <main className="mt-14">
       <Component {...pageProps} className="mt-10"></Component>
       <Header></Header>
       <Auth></Auth>
       <Footer></Footer>
-    </>
+    </main>
   )
 }
 

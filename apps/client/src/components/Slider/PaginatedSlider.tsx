@@ -17,8 +17,6 @@ const PaginatedSlider = () => {
       dots.forEach(dot => {
         dot.classList.remove('dots__dot--active')
       })
-      // eslint-disable-next-line no-console
-      console.log(slide)
       document
         .querySelector(`.dots__dot--div[data-slide="${slide}"]`)
         .classList.add('dots__dot--active')
@@ -74,9 +72,9 @@ const PaginatedSlider = () => {
     }
 
     const startAutoSlider = () => {
-      if (!autoSlider) {
-        autoSlider = setInterval(nextSlide, 3000)
-      }
+      // if (!autoSlider) {
+      //   autoSlider = setInterval(nextSlide, 3000)
+      // }
     }
 
     const stopAutoSlider = () => {

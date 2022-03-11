@@ -7,7 +7,7 @@ import InfiniteSlider from '../components/Slider/InfiniteSlider'
 
 const Home: NextPage = () => {
   return (
-    <main className="mt-14">
+    <>
       <Head>
         <title>Magicdot | Online Shopping store</title>
         <Favicon></Favicon>
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
           backgroundColor: 'bg-white',
           textColor: 'text-white',
           textBackgroundColor: 'bg-black',
-          direction: 'infinite-slide-straight',
+          animation: 'animate-[bannermove_20s_linear_infinite_alternate]',
         }}
       ></InfiniteSlider>
       <div className="relative h-[400px] w-full bg-[#f1eef5] md:h-[600px]">
@@ -217,10 +217,11 @@ const Home: NextPage = () => {
           backgroundColor: 'bg-black',
           textColor: 'text-black',
           textBackgroundColor: 'bg-white',
-          direction: 'infinite-slide-reverse',
+          animation:
+            'animate-[bannermove_20s_linear_infinite_alternate-reverse]',
         }}
       ></InfiniteSlider>
-    </main>
+    </>
   )
 }
 

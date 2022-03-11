@@ -2,59 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.hover-trigger .hover-target {
-  display: none;
-}
-
-.hover-trigger:hover .hover-target {
-  display: block;
-}
-
-.dots {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-
-.dots__dot--active {
-  opacity: 1;
-  background: white;
-  animation: load 3s linear;
-}
-
-.overlay:hover img {
-  transform: scale(1.3);
-}
-
-.infinite-slide-straight {
-  animation: bannermove 20s linear infinite alternate;
-}
-.infinite-slide-reverse {
-  animation: bannermove 20s linear infinite alternate-reverse;
-}
-
-@keyframes load {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
+@layer base {
+  img {
+    @apply h-full w-full object-cover;
   }
 }
 
-@keyframes bannermove {
-  0% {
-    transform: translateX(0);
+@layer components {
+  .hover-trigger .hover-target {
+    @apply hidden;
   }
-  100% {
-    transform: translateX(-50%);
+  .hover-trigger:hover .hover-target {
+    @apply block;
+  }
+  .dots {
+    @apply absolute bottom-[5%] left-[50%] flex -translate-x-[50%];
+  }
+  .dots__dot--active {
+    @apply animate-loadline bg-white opacity-100;
+  }
+  .secondary-nav-link {
+    @apply rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black;
+  }
+  .active-secondary-nav-link {
+    @apply bg-white text-black;
+  }
+  .overlay:hover img {
+    @apply scale-125;
   }
 }

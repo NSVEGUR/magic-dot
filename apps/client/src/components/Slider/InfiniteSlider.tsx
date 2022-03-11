@@ -5,7 +5,7 @@ type infiniteSlider = {
   backgroundColor: string
   textColor: string
   textBackgroundColor: string
-  direction: string
+  animation: string
 }
 
 const InfiniteSlider = (props: infiniteSlider) => {
@@ -14,7 +14,7 @@ const InfiniteSlider = (props: infiniteSlider) => {
       className={`h-72 w-full overflow-hidden md:h-96 ${props.backgroundColor}`}
     >
       <article
-        className={`${props.direction} flex h-full w-[900%] ${props.backgroundColor} md:w-[400%]`}
+        className={`${props.animation} flex h-full w-[900%] ${props.backgroundColor} md:w-[400%]`}
       >
         <div>
           <ul

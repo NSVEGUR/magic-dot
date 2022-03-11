@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 var lastScrollTop = 0
 
@@ -26,7 +27,7 @@ const Navbar = () => {
   }, [])
   return (
     <>
-      <nav className="navbar-top fixed top-0 z-[999] w-full overflow-x-hidden bg-black text-white transition duration-300">
+      <nav className="navbar-top fixed top-0 z-[999] w-full overflow-x-hidden bg-black text-white transition duration-500">
         <div className="flex justify-between px-2 py-2 md:px-8">
           <div className="logo">
             <a href="#" className="flex items-center">
@@ -43,9 +44,9 @@ const Navbar = () => {
             </a>
           </div>
           <div className="primary-nav hidden items-center space-x-4 md:flex">
-            <a href="#" className="text-white">
-              Home
-            </a>
+            <Link href="/" passHref>
+              <span className="cursor-pointer text-white">Home</span>
+            </Link>
             <a href="#" className="text-gray-400 hover:text-white">
               Featured
             </a>
@@ -61,8 +62,8 @@ const Navbar = () => {
           </div>
           <div className="secondary-nav hidden items-center space-x-2 md:flex">
             <button
-              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
-              onClick={() => {
+              className="secondary-nav-link"
+              onClick={function () {
                 document.querySelector('.search-bar').classList.toggle('hidden')
               }}
             >
@@ -81,46 +82,44 @@ const Navbar = () => {
                 ></path>
               </svg>
             </button>
-            <a
-              href="#"
-              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
-            >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
-            >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                ></path>
-              </svg>
-            </a>
+            <Link href="/wishlist" passHref>
+              <span className="secondary-nav-link">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  ></path>
+                </svg>
+              </span>
+            </Link>
+            <Link href="/shoppingbag" passHref>
+              <span className="secondary-nav-link">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  ></path>
+                </svg>
+              </span>
+            </Link>
             <button
-              className="rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black"
+              className="secondary-nav-link"
               onClick={() => {
                 document.querySelector('.login-form').classList.remove('hidden')
               }}
