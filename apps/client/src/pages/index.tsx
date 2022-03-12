@@ -128,7 +128,7 @@ const Home: NextPage = () => {
           alt="men"
         />
         <div className="absolute inset-0 z-[1] h-full w-full bg-black opacity-40"></div>
-        <div className="absolute inset-0 z-[1] flex h-full w-full flex-col items-start justify-center gap-3 pl-1 text-xl font-bold text-white md:w-1/2 md:pl-16">
+        <div className="absolute inset-0 z-[1] flex h-full w-full flex-col items-start justify-center gap-3 p-4 text-xl font-bold text-white md:w-1/2 md:pl-16">
           <h1 className="text-2xl font-bold text-white md:text-5xl">
             Every Occassion must be memorable
           </h1>
@@ -179,7 +179,7 @@ const Home: NextPage = () => {
           <source src="/assets/clothes.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 z-[1] h-full w-full bg-white opacity-30"></div>
-        <div className="absolute right-2 z-[1] flex h-full w-full flex-col items-end justify-center gap-3 pl-1 text-xl font-bold text-black md:right-16 md:w-1/2 md:pl-16">
+        <div className="absolute right-2 z-[1] flex h-full w-full flex-col items-end justify-center gap-3 p-4 text-xl font-bold text-black md:right-16 md:w-1/2 md:pl-16">
           <h1 className="text-right text-2xl font-bold text-black md:text-5xl">
             Every Occassion must be memorable
           </h1>

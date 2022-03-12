@@ -23,28 +23,16 @@ const Help = () => {
       </div>
       <div className="flex flex-col gap-3 text-white">
         <h1 className="mb-2 text-xl font-bold capitalize ">Help</h1>
-        <a
-          href="#"
-          className="transition duration-300 hover:ml-1 hover:text-gray-400 hover:underline"
-        >
+        <a href="#" className="transition duration-300 hover:text-gray-400">
           Contact
         </a>
-        <a
-          href="#"
-          className="transition duration-300 hover:ml-1 hover:text-gray-400 hover:underline"
-        >
+        <a href="#" className="transition duration-300 hover:text-gray-400">
           My Account
         </a>
-        <a
-          href="#"
-          className="transition duration-300 hover:ml-1 hover:text-gray-400 hover:underline"
-        >
+        <a href="#" className="transition duration-300 hover:text-gray-400">
           Terms & Conditions
         </a>
-        <a
-          href="#"
-          className="transition duration-300 hover:ml-1 hover:text-gray-400 hover:underline"
-        >
+        <a href="#" className="transition duration-300 hover:text-gray-400">
           Privacy Policy
         </a>
       </div>

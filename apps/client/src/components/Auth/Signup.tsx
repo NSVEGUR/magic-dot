@@ -14,8 +14,8 @@ const Login = () => {
         onClick={() => {
           document.querySelector('.signup-form').classList.add('hidden')
           document
-            .querySelector('.profile-icon')
-            .classList.remove('active-secondary-nav-link')
+            .querySelectorAll('.profile-icon')
+            .forEach(link => link.classList.remove('active-link'))
         }}
       >
         <form
@@ -30,8 +30,8 @@ const Login = () => {
             onClick={() => {
               document.querySelector('.signup-form').classList.add('hidden')
               document
-                .querySelector('.profile-icon')
-                .classList.remove('active-secondary-nav-link')
+                .querySelectorAll('.profile-icon')
+                .forEach(link => link.classList.remove('active-link'))
             }}
           >
             <svg

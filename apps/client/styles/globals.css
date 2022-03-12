@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   img {
     @apply h-full w-full object-cover;
   }
@@ -25,7 +28,7 @@
     @apply text-gray-400 hover:text-white;
   }
   .nav-link.active-link {
-    @apply text-white;
+    @apply mt-1 text-lg font-bold text-white transition duration-300;
   }
   .secondary-nav-link {
     @apply cursor-pointer rounded-full bg-gray-800 p-2 text-gray-400 transition duration-300 hover:rotate-[360deg] hover:bg-white hover:text-black;

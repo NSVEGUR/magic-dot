@@ -1,11 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 var lastScrollTop = 0
 
 const Navbar = () => {
+  const router = useRouter()
   React.useEffect(() => {
+    initiateActiveLink(router.pathname.slice(1))
     window.addEventListener('scroll', () => {
       var st = window.screenY || document.documentElement.scrollTop
       if (st > lastScrollTop && window.scrollY >= 100) {
@@ -24,7 +27,8 @@ const Navbar = () => {
           .classList.remove('-translate-y-full')
       }
     })
-  }, [])
+  }, [router.pathname])
+
   return (
     <nav onClick={handleNavbar}>
       <nav className="navbar-top fixed top-0 z-[999] w-full overflow-x-hidden bg-black text-white transition duration-500">
@@ -35,29 +39,39 @@ const Navbar = () => {
                 src="/logo-trans.png"
                 className="mr-3 h-6 sm:h-10"
                 alt="Magic Dot Logo"
-                width={50}
-                height={50}
+                width={45}
+                height={45}
               />
-              <span className="self-center whitespace-nowrap text-xl font-semibold">
+              <span className="self-center whitespace-nowrap pl-2 text-xl font-semibold">
                 Magicdot
               </span>
             </a>
           </div>
           <div className="primary-nav hidden items-center space-x-4 md:flex">
             <Link href="/" passHref>
-              <span className="nav-link active-link cursor-pointer">Home</span>
+              <span className="nav-link cursor-pointer" data-nav="home">
+                Home
+              </span>
             </Link>
             <Link href="/featured" passHref>
-              <span className="nav-link cursor-pointer">Featured</span>
+              <span className="nav-link cursor-pointer" data-nav="featured">
+                Featured
+              </span>
             </Link>
             <Link href="/men" passHref>
-              <span className="nav-link cursor-pointer">Men</span>
+              <span className="nav-link cursor-pointer" data-nav="men">
+                Men
+              </span>
             </Link>
             <Link href="/women" passHref>
-              <span className="nav-link cursor-pointer">Women</span>
+              <span className="nav-link cursor-pointer" data-nav="women">
+                Women
+              </span>
             </Link>
             <Link href="/kids" passHref>
-              <span className="nav-link cursor-pointer">Kids</span>
+              <span className="nav-link cursor-pointer" data-nav="kids">
+                Kids
+              </span>
             </Link>
           </div>
           <div className="secondary-nav hidden items-center space-x-2 md:flex">
@@ -78,7 +92,7 @@ const Navbar = () => {
               </svg>
             </button>
             <Link href="/wishlist" passHref>
-              <span className="nav-link secondary-nav-link">
+              <span className="nav-link secondary-nav-link" data-nav="wishlist">
                 <svg
                   className="h-5 w-5"
                   fill="none"
@@ -96,7 +110,10 @@ const Navbar = () => {
               </span>
             </Link>
             <Link href="/shoppingbag" passHref>
-              <span className="nav-link secondary-nav-link">
+              <span
+                className="nav-link secondary-nav-link"
+                data-nav="shoppingbag"
+              >
                 <svg
                   className="h-5 w-5"
                   fill="none"
@@ -149,7 +166,7 @@ const Navbar = () => {
             </button>
             <button className="menu-icon-mobile">
               <svg
-                className="h-7 w-7"
+                className="h-6 w-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -218,30 +235,41 @@ const Navbar = () => {
         </div>
         <div className="mobile-menu hidden space-y-2 px-4 pb-4 transition duration-300 md:hidden">
           <Link href="/" passHref>
-            <span className="nav-link active-link block cursor-pointer">
+            <span className="nav-link block cursor-pointer" data-nav="home">
               Home
             </span>
           </Link>
           <Link href="/featured" passHref>
-            <span className="nav-link block cursor-pointer">Featured</span>
+            <span className="nav-link block cursor-pointer" data-nav="featured">
+              Featured
+            </span>
           </Link>
           <Link href="/men" passHref>
-            <span className="nav-link block cursor-pointer">Men</span>
+            <span className="nav-link block cursor-pointer" data-nav="men">
+              Men
+            </span>
           </Link>
           <Link href="/women" passHref>
-            <span className="nav-link block cursor-pointer">Women</span>
+            <span className="nav-link block cursor-pointer" data-nav="women">
+              Women
+            </span>
           </Link>
           <Link href="/kids" passHref>
-            <span className="nav-link block cursor-pointer">Kids</span>
+            <span className="nav-link block cursor-pointer" data-nav="kids">
+              Kids
+            </span>
           </Link>
         </div>
       </nav>
       <nav className="navbar-bottom fixed -bottom-1 z-[999] w-full overflow-x-hidden bg-black text-white">
         <div className="flex justify-evenly px-2 py-4 md:hidden">
           <Link href="/" passHref>
-            <span className="nav-link mobile-secondary-nav-link active-link">
+            <span
+              className="nav-link mobile-secondary-nav-link"
+              data-nav="home"
+            >
               <svg
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -257,7 +285,10 @@ const Navbar = () => {
             </span>
           </Link>
           <Link href="/wishlist" passHref>
-            <span className="nav-link mobile-secondary-nav-link">
+            <span
+              className="nav-link mobile-secondary-nav-link"
+              data-nav="wishlist"
+            >
               <svg
                 className="h-7 w-7"
                 fill="none"
@@ -275,7 +306,10 @@ const Navbar = () => {
             </span>
           </Link>
           <Link href="/shoppingbag" passHref>
-            <span className="nav-link mobile-secondary-nav-link">
+            <span
+              className="nav-link mobile-secondary-nav-link"
+              data-nav="shoppingbag"
+            >
               <svg
                 className="h-7 w-7"
                 fill="none"
@@ -292,7 +326,7 @@ const Navbar = () => {
               </svg>
             </span>
           </Link>
-          <a href="#" className="mobile-secondary-nav-link">
+          <button className="mobile-secondary-nav-link profile-icon">
             <svg
               className="h-7 w-7"
               fill="none"
@@ -307,7 +341,7 @@ const Navbar = () => {
                 d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               ></path>
             </svg>
-          </a>
+          </button>
         </div>
       </nav>
     </nav>
@@ -322,7 +356,10 @@ const handleNavbar = (e: React.MouseEvent) => {
     document
       .querySelectorAll('.nav-link')
       .forEach(link => link.classList.remove('active-link'))
-    element.closest('span').classList.add('active-link')
+    const { nav } = element.closest('span').dataset
+    document
+      .querySelectorAll(`[data-nav='${nav}']`)
+      .forEach(link => link.classList.add('active-link'))
   }
 
   //Nav Buttons
@@ -342,10 +379,22 @@ const handleNavbar = (e: React.MouseEvent) => {
   //Auth menu
   if (element.closest('button')?.classList.contains('profile-icon')) {
     document.querySelector('.login-form').classList.remove('hidden')
-    document
-      .querySelector('.profile-icon')
-      .classList.add('active-secondary-nav-link')
+    element.closest('button').classList.add('active-link')
   }
+}
+
+const initiateActiveLink = (path: string) => {
+  document
+    .querySelectorAll('.nav-link')
+    .forEach(link => link.classList.remove('active-link'))
+  if (!path)
+    document
+      .querySelectorAll(`[data-nav='home']`)
+      .forEach(link => link.classList.add('active-link'))
+  else
+    document
+      .querySelectorAll(`[data-nav='${path}']`)
+      .forEach(link => link.classList.add('active-link'))
 }
 
 export default Navbar

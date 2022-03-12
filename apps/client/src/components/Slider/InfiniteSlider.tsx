@@ -11,10 +11,10 @@ type infiniteSlider = {
 const InfiniteSlider = (props: infiniteSlider) => {
   return (
     <section
-      className={`h-72 w-full overflow-hidden md:h-96 ${props.backgroundColor}`}
+      className={`h-72 w-full overflow-hidden md:h-96 ${props.backgroundColor} bg-fixed`}
     >
       <article
-        className={`${props.animation} flex h-full w-[900%] ${props.backgroundColor} md:w-[400%]`}
+        className={`${props.animation} flex h-full w-[900%] ${props.backgroundColor} overflow-hidden bg-fixed md:w-[400%]`}
       >
         <div>
           <ul
