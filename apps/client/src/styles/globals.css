@@ -45,4 +45,21 @@
   .overlay:hover img {
     @apply scale-125;
   }
+  .tooltip {
+    @apply relative;
+  }
+  .tooltip::before,
+  .tooltip::after {
+    @apply absolute block opacity-0;
+  }
+  .tooltip::after {
+    @apply top-5 left-5 h-0 w-0 -translate-y-3 border-r-[6px] border-b-[6px] border-l-[6px] border-solid border-r-transparent border-l-transparent border-b-[rgba(0,0,0,.75)] transition-all content-[''];
+  }
+  .tooltip::before {
+    @apply top-7 -translate-y-3 whitespace-nowrap rounded-[2px] bg-[rgba(0,0,0,.75)] py-[6px] px-[10px] text-sm text-white transition-all content-[attr(data-title)];
+  }
+  .tooltip:hover::after,
+  .tooltip:hover::before {
+    @apply translate-y-0 opacity-100;
+  }
 }
