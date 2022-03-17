@@ -95,8 +95,6 @@ export default Women
 export async function getStaticProps() {
   const response = await fetch('https://fakestoreapi.com/products')
   const data = await response.json()
-  // eslint-disable-next-line no-console
-  console.log(data)
   return {
     props: {
       data,

@@ -17,10 +17,6 @@ export class UserController {
 
   @Patch()
   editUser(@GetUser('id') userId: number, @Body() dto: EditUserDto) {
-    console.log(
-      '🚀 ~ file: user.controller.ts ~ line 21 ~ UserController ~ editUser ~ userId',
-      dto,
-    )
     return this.userService.editUser(userId, dto)
   }
 }
