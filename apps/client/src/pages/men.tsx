@@ -7,7 +7,7 @@ const Men = ({ data }) => {
   return (
     <>
       <Head>
-        <title>Men | Magicdot</title>
+        <title>Magicdot</title>
         <Favicon></Favicon>
       </Head>
       <main className="py-4 px-2 md:px-8 lg:px-16">
