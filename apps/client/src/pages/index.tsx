@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Magicdot | Online Shopping store</title>
+        <title>Magicdot | Shopping store</title>
         <Favicon></Favicon>
       </Head>
       <PaginatedSlider></PaginatedSlider>
